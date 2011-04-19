@@ -1,0 +1,18 @@
+{% extends "main.html" -%}
+{% block body -%}
+
+<h2>List of acronyms</h2>
+<table>
+    <tr>
+        <th>Acronym</th>
+        <th>Translation</th>
+    </tr>
+    {% for acronym in acronyms -%}
+    <tr>
+        <td>{{ acronym.acronym }}</td>
+        <td>{{ acronym.translation }}</td>
+    </tr>
+    {%- endfor %}
+</table>
+
+{%- endblock body %}

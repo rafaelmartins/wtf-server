@@ -1,0 +1,27 @@
+{% extends "main.html" -%}
+{% block body -%}
+
+<h2>Public API</h2>
+
+<p><strong>XML-RPC endpoint</strong>: {{ url_for('.api', _external=True) }}</p>
+
+<table>
+    <tr>
+        <th>Function</th>
+        <th>Description</th>
+    </tr>
+    {% for func, args, help in funcs -%}
+    <tr>
+        <td>
+            <span class="func">{{ func }}</span>(
+                {%- for arg in args.args %}<span class="arg">{{ arg }}</span>{%
+                if not loop.last %}, {% endif %}{% endfor %})
+        </td>
+        <td>
+            {{ help }}
+        </td>
+    </tr>
+    {%- endfor %}
+</table>
+
+{%- endblock body %}

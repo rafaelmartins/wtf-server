@@ -1,0 +1,43 @@
+body {
+    font-family: Verdana, sans-serif;
+    font-size: normal;
+    text-align: center;
+}
+
+a {
+    color: #036;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    text-align: left;
+    width: 500px;
+    margin: 0 auto;
+}
+
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+tr, td, th {
+    border: 1px solid #000;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+th {
+    background-color: #eee;
+}
+
+.func {
+    font-style: italic;
+}
+
+.arg {
+    font-size: small;
+}

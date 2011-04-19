@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="generator" content="wtf-server" />  
+        <link type="text/css" media="screen" rel="stylesheet" href="{{
+            url_for('.static', filename='screen.css') }}" />
+        <title>wtf-server</title>
+    </head>
+    <body>
+        <h1>wtf-server</h1>
+
+<!-- begin body block -->
+
+{% block body -%}
+
+<p>
+    This is a XML-RPC server. You can connect directly to it using the
+    <a href="{{ url_for('views.api_doc') }} ">public API</a>, or just use our
+    cool `wtf' script. :o)
+</p>
+
+<table>
+    <tr>
+        <th>Resources</th>
+    </tr>
+    <tr>
+        <td><a href="{{ url_for('views.api_doc') }} ">Public API documentation</a></td>
+    </tr>
+    <tr>
+        <td><a href="{{ url_for('views.acronyms') }} ">List of acronyms</a></td>
+    </tr>
+</ul>
+
+{%- endblock body %}
+
+<!-- end body block -->
+    
+    </body>
+</html>
