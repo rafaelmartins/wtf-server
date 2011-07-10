@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from flask import Flask, Module, redirect, render_template, url_for, \
+from flask import Flask, Blueprint, redirect, render_template, url_for, \
      _request_ctx_stack
 from flaskext.script import Command, Manager, Option
 from flaskext.sqlalchemy import SQLAlchemy
@@ -90,7 +90,7 @@ def list_all():
 
 ### Views ###
 
-views = Module(__name__, name='views')
+views = Blueprint('views', __name__)
 
 @views.route('/')
 def home():
@@ -133,7 +133,7 @@ def create_app(database=None):
     
     api.connect(app, '/RPC2')
     db.init_app(app)
-    app.register_module(views)
+    app.register_blueprint(views)
     
     return app
 
