@@ -1,0 +1,6 @@
+*.wpr
+*.pyc
+*.pyo
+/env/
+
+/wtf
